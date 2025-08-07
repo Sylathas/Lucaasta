@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
 
 interface InputProps {
     label: string
@@ -124,17 +125,19 @@ export function ImageUpload({
                 />
                 <button
                     type="button"
-                    className="w-[300px] rounded px-3 py-2 text-left bg-blue-600"
+                    className="w-full border border-gray-300 rounded px-3 py-2 text-left text-gray-700 bg-white hover:bg-gray-50"
                 >
                     {buttonText}
                 </button>
             </div>
             {currentImage && (
                 <div className="mt-2">
-                    <img
+                    <Image
                         src={currentImage}
                         alt="Current"
-                        className="h-20 object-cover rounded border"
+                        width={80}
+                        height={80}
+                        className="h-20 w-20 object-cover rounded border"
                     />
                 </div>
             )}
@@ -196,7 +199,7 @@ export function ImageGalleryUpload({
                 <button
                     type="button"
                     disabled={uploading}
-                    className="w-[300px] rounded px-3 py-2 text-left bg-blue-600"
+                    className="w-full border border-gray-300 rounded px-3 py-2 text-left text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
                 >
                     {uploading ? 'Uploading...' : uploadButtonText}
                 </button>
@@ -210,9 +213,11 @@ export function ImageGalleryUpload({
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
                         {images.map((url, index) => (
                             <div key={index} className="relative group">
-                                <img
+                                <Image
                                     src={url}
                                     alt={`${label} ${index + 1}`}
+                                    width={80}
+                                    height={80}
                                     className="w-full h-20 object-cover rounded border"
                                 />
                                 <button

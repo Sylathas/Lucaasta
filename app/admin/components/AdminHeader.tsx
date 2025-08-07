@@ -17,7 +17,7 @@ export default function AdminHeader({
     return (
         <div className="bg-white shadow-sm border-b">
             <div className="max-w-6xl mx-auto px-4 py-4">
-                <h1 className="text-2xl font-bold text-gray-900">Luca Asta CMS</h1>
+                <h1 className="text-2xl font-bold text-gray-900">CMS Admin</h1>
                 <div className="mt-4 flex justify-between items-center">
                     <div className="flex space-x-4">
                         <TabButton

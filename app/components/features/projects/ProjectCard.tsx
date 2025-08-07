@@ -1,6 +1,7 @@
 import React from 'react'
 import { Project } from '@/types'
 import { Timestamp } from 'firebase/firestore'
+import Image from 'next/image'
 
 interface ProjectCardProps {
     project: Project
@@ -27,14 +28,16 @@ export default function ProjectCard({
 
     return (
         <div
-            className={`bg-white p-4 text-black rounded-lg shadow-sm border transition-shadow ${(onEdit || onClick) ? 'hover:shadow-md cursor-pointer' : ''
+            className={`bg-white p-4 rounded-lg shadow-sm border transition-shadow text-black ${(onEdit || onClick) ? 'hover:shadow-md cursor-pointer' : ''
                 }`}
             onClick={handleClick}
         >
             {project.cover_image && (
-                <img
+                <Image
                     src={project.cover_image}
                     alt={project.title}
+                    width={400}
+                    height={200}
                     className="w-full h-32 object-cover rounded mb-3"
                 />
             )}

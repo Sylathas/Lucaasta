@@ -91,7 +91,7 @@ function useProjects() {
         "useProjects.useCallback[saveProject]": async (project)=>{
             setError(null);
             try {
-                const { id, ...projectData } = project;
+                const { id: _, ...projectData } = project;
                 if (project.id) {
                     await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["updateDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], 'projects', project.id), projectData);
                 } else {
@@ -288,6 +288,8 @@ __turbopack_context__.s({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$firestore$2f$dist$2f$esm$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/firestore/dist/esm/index.esm.js [app-client] (ecmascript) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@firebase/firestore/dist/index.esm.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+;
 ;
 ;
 function ProjectCard(param) {
@@ -300,16 +302,18 @@ function ProjectCard(param) {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "bg-white p-4 text-black rounded-lg shadow-sm border transition-shadow ".concat(onEdit || onClick ? 'hover:shadow-md cursor-pointer' : ''),
+        className: "bg-white p-4 rounded-lg shadow-sm border transition-shadow text-black ".concat(onEdit || onClick ? 'hover:shadow-md cursor-pointer' : ''),
         onClick: handleClick,
         children: [
-            project.cover_image && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+            project.cover_image && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 src: project.cover_image,
                 alt: project.title,
+                width: 400,
+                height: 200,
                 className: "w-full h-32 object-cover rounded mb-3"
             }, void 0, false, {
                 fileName: "[project]/app/components/features/projects/ProjectCard.tsx",
-                lineNumber: 35,
+                lineNumber: 36,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -317,7 +321,7 @@ function ProjectCard(param) {
                 children: project.title
             }, void 0, false, {
                 fileName: "[project]/app/components/features/projects/ProjectCard.tsx",
-                lineNumber: 41,
+                lineNumber: 44,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -325,7 +329,7 @@ function ProjectCard(param) {
                 children: project.date instanceof __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Timestamp"] ? project.date.toDate().toLocaleDateString() : project.date
             }, void 0, false, {
                 fileName: "[project]/app/components/features/projects/ProjectCard.tsx",
-                lineNumber: 42,
+                lineNumber: 45,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -335,12 +339,12 @@ function ProjectCard(param) {
                         children: type
                     }, i, false, {
                         fileName: "[project]/app/components/features/projects/ProjectCard.tsx",
-                        lineNumber: 49,
+                        lineNumber: 52,
                         columnNumber: 21
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/components/features/projects/ProjectCard.tsx",
-                lineNumber: 47,
+                lineNumber: 50,
                 columnNumber: 13
             }, this),
             showEditButton && variant === 'admin' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -352,13 +356,13 @@ function ProjectCard(param) {
                 children: "Edit"
             }, void 0, false, {
                 fileName: "[project]/app/components/features/projects/ProjectCard.tsx",
-                lineNumber: 55,
+                lineNumber: 58,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/features/projects/ProjectCard.tsx",
-        lineNumber: 29,
+        lineNumber: 30,
         columnNumber: 9
     }, this);
 }
@@ -490,7 +494,7 @@ function AdminHeader(param) {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                     className: "text-2xl font-bold text-gray-900",
-                    children: "Luca Asta CMS"
+                    children: "CMS Admin"
                 }, void 0, false, {
                     fileName: "[project]/app/admin/components/AdminHeader.tsx",
                     lineNumber: 20,
@@ -731,8 +735,10 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
+;
 ;
 function Input(param) {
     let { label, type = 'text', value, onChange, placeholder, required } = param;
@@ -743,7 +749,7 @@ function Input(param) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 22,
+                lineNumber: 23,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -755,13 +761,13 @@ function Input(param) {
                 className: "w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/components/FormComponents.tsx",
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 9
     }, this);
 }
@@ -775,7 +781,7 @@ function TextArea(param) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 54,
+                lineNumber: 55,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -786,13 +792,13 @@ function TextArea(param) {
                 className: "w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 57,
+                lineNumber: 58,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/components/FormComponents.tsx",
-        lineNumber: 53,
+        lineNumber: 54,
         columnNumber: 9
     }, this);
 }
@@ -813,7 +819,7 @@ function ArrayField(param) {
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 86,
+                lineNumber: 87,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -824,13 +830,13 @@ function ArrayField(param) {
                 className: "w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 89,
+                lineNumber: 90,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/components/FormComponents.tsx",
-        lineNumber: 85,
+        lineNumber: 86,
         columnNumber: 9
     }, this);
 }
@@ -845,7 +851,7 @@ function ImageUpload(param) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 115,
+                lineNumber: 116,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -858,44 +864,46 @@ function ImageUpload(param) {
                         className: "absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 119,
+                        lineNumber: 120,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         type: "button",
-                        className: "w-[300px] rounded px-3 py-2 text-left bg-blue-600",
+                        className: "w-full border border-gray-300 rounded px-3 py-2 text-left text-gray-700 bg-white hover:bg-gray-50",
                         children: buttonText
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 125,
+                        lineNumber: 126,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 118,
+                lineNumber: 119,
                 columnNumber: 13
             }, this),
             currentImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-2",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     src: currentImage,
                     alt: "Current",
-                    className: "h-20 object-cover rounded border"
+                    width: 80,
+                    height: 80,
+                    className: "h-20 w-20 object-cover rounded border"
                 }, void 0, false, {
                     fileName: "[project]/app/admin/components/FormComponents.tsx",
-                    lineNumber: 134,
+                    lineNumber: 135,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 133,
+                lineNumber: 134,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/components/FormComponents.tsx",
-        lineNumber: 114,
+        lineNumber: 115,
         columnNumber: 9
     }, this);
 }
@@ -932,7 +940,7 @@ function ImageGalleryUpload(param) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 185,
+                lineNumber: 188,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -946,23 +954,23 @@ function ImageGalleryUpload(param) {
                         className: "absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 189,
+                        lineNumber: 192,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         type: "button",
                         disabled: uploading,
-                        className: "w-[300px] rounded px-3 py-2 text-left bg-blue-600",
+                        className: "w-full border border-gray-300 rounded px-3 py-2 text-left text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50",
                         children: uploading ? 'Uploading...' : uploadButtonText
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 196,
+                        lineNumber: 199,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 188,
+                lineNumber: 191,
                 columnNumber: 13
             }, this),
             images.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -977,7 +985,7 @@ function ImageGalleryUpload(param) {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 207,
+                        lineNumber: 210,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -985,13 +993,15 @@ function ImageGalleryUpload(param) {
                         children: images.map((url, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "relative group",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         src: url,
                                         alt: "".concat(label, " ").concat(index + 1),
+                                        width: 80,
+                                        height: 80,
                                         className: "w-full h-20 object-cover rounded border"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 216,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1001,30 +1011,30 @@ function ImageGalleryUpload(param) {
                                         children: "×"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                                        lineNumber: 218,
+                                        lineNumber: 223,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                                lineNumber: 212,
+                                lineNumber: 215,
                                 columnNumber: 29
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 210,
+                        lineNumber: 213,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 206,
+                lineNumber: 209,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/components/FormComponents.tsx",
-        lineNumber: 184,
+        lineNumber: 187,
         columnNumber: 9
     }, this);
 }
@@ -1065,7 +1075,7 @@ function DatePicker(param) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 262,
+                lineNumber: 267,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1080,12 +1090,12 @@ function DatePicker(param) {
                                 children: month
                             }, index, false, {
                                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                                lineNumber: 272,
+                                lineNumber: 277,
                                 columnNumber: 25
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 266,
+                        lineNumber: 271,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1097,24 +1107,24 @@ function DatePicker(param) {
                                 children: year
                             }, year, false, {
                                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                                lineNumber: 283,
+                                lineNumber: 288,
                                 columnNumber: 25
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 277,
+                        lineNumber: 282,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 265,
+                lineNumber: 270,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/components/FormComponents.tsx",
-        lineNumber: 261,
+        lineNumber: 266,
         columnNumber: 9
     }, this);
 }
@@ -1137,7 +1147,7 @@ function CheckboxGroup(param) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 319,
+                lineNumber: 324,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1152,7 +1162,7 @@ function CheckboxGroup(param) {
                                 className: "rounded border-gray-300 focus:ring-blue-500"
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                                lineNumber: 325,
+                                lineNumber: 330,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1160,24 +1170,24 @@ function CheckboxGroup(param) {
                                 children: option
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                                lineNumber: 331,
+                                lineNumber: 336,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, option, true, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 324,
+                        lineNumber: 329,
                         columnNumber: 21
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 322,
+                lineNumber: 327,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/components/FormComponents.tsx",
-        lineNumber: 318,
+        lineNumber: 323,
         columnNumber: 9
     }, this);
 }
@@ -1200,7 +1210,7 @@ function RichTextEditor(param) {
                         children: label
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 368,
+                        lineNumber: 373,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1210,13 +1220,13 @@ function RichTextEditor(param) {
                         children: showPreview ? 'Edit' : 'Preview'
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/FormComponents.tsx",
-                        lineNumber: 371,
+                        lineNumber: 376,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 367,
+                lineNumber: 372,
                 columnNumber: 13
             }, this),
             showPreview ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1230,12 +1240,12 @@ function RichTextEditor(param) {
                     }
                 }, void 0, false, {
                     fileName: "[project]/app/admin/components/FormComponents.tsx",
-                    lineNumber: 385,
+                    lineNumber: 390,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 381,
+                lineNumber: 386,
                 columnNumber: 17
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                 value: value || '',
@@ -1245,7 +1255,7 @@ function RichTextEditor(param) {
                 className: "w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 388,
+                lineNumber: 393,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1253,13 +1263,13 @@ function RichTextEditor(param) {
                 children: "Use **bold** and *italic* for formatting"
             }, void 0, false, {
                 fileName: "[project]/app/admin/components/FormComponents.tsx",
-                lineNumber: 396,
+                lineNumber: 401,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/components/FormComponents.tsx",
-        lineNumber: 366,
+        lineNumber: 371,
         columnNumber: 9
     }, this);
 }
@@ -1317,13 +1327,13 @@ function ProjectModal(param) {
     const [saving, setSaving] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [uploading, setUploading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const projectTypeOptions = [
-        'photography',
-        'performance',
-        'sculpture',
-        'drawing',
-        'publication',
-        'artistfilm',
-        'commercialfilm'
+        'Photography',
+        'Performance',
+        'Sculpture',
+        'Drawing',
+        'Publication',
+        'Artist Film',
+        'Commercial Film'
     ];
     const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -1720,7 +1730,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 function AboutEditor(param) {
-    let { aboutData, isEditing, onEdit, onCancel, onSave, uploadImage } = param;
+    let { aboutData, isEditing, onEdit, onCancel, onSave } = param;
     _s();
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(aboutData);
     const [saving, setSaving] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -1762,7 +1772,7 @@ function AboutEditor(param) {
                             children: "About Section"
                         }, void 0, false, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 52,
+                            lineNumber: 50,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1771,13 +1781,13 @@ function AboutEditor(param) {
                             children: "Edit About"
                         }, void 0, false, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 53,
+                            lineNumber: 51,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                    lineNumber: 51,
+                    lineNumber: 49,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1793,7 +1803,7 @@ function AboutEditor(param) {
                                             children: "Contact Information"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 65,
+                                            lineNumber: 63,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1805,7 +1815,7 @@ function AboutEditor(param) {
                                                             children: "Email:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                                            lineNumber: 68,
+                                                            lineNumber: 66,
                                                             columnNumber: 40
                                                         }, this),
                                                         " ",
@@ -1813,7 +1823,7 @@ function AboutEditor(param) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                                    lineNumber: 68,
+                                                    lineNumber: 66,
                                                     columnNumber: 37
                                                 }, this),
                                                 aboutData.instagram && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1822,7 +1832,7 @@ function AboutEditor(param) {
                                                             children: "Instagram:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                                            lineNumber: 71,
+                                                            lineNumber: 69,
                                                             columnNumber: 40
                                                         }, this),
                                                         " ",
@@ -1830,7 +1840,7 @@ function AboutEditor(param) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                                    lineNumber: 71,
+                                                    lineNumber: 69,
                                                     columnNumber: 37
                                                 }, this),
                                                 aboutData.vimeo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1839,7 +1849,7 @@ function AboutEditor(param) {
                                                             children: "Vimeo:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                                            lineNumber: 74,
+                                                            lineNumber: 72,
                                                             columnNumber: 40
                                                         }, this),
                                                         " ",
@@ -1847,19 +1857,19 @@ function AboutEditor(param) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                                    lineNumber: 74,
+                                                    lineNumber: 72,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 66,
+                                            lineNumber: 64,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 62,
                                     columnNumber: 25
                                 }, this),
                                 aboutData.contact && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1869,7 +1879,7 @@ function AboutEditor(param) {
                                             children: "Additional Contact"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 81,
+                                            lineNumber: 79,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1877,19 +1887,19 @@ function AboutEditor(param) {
                                             children: aboutData.contact
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 82,
+                                            lineNumber: 80,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 78,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 63,
+                            lineNumber: 61,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1901,7 +1911,7 @@ function AboutEditor(param) {
                                         children: "Short Bio"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 88,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1909,24 +1919,24 @@ function AboutEditor(param) {
                                         children: aboutData.short_bio
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 91,
+                                        lineNumber: 89,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 89,
+                                lineNumber: 87,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 88,
+                            lineNumber: 86,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                    lineNumber: 61,
+                    lineNumber: 59,
                     columnNumber: 17
                 }, this),
                 aboutData.long_bio && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1937,7 +1947,7 @@ function AboutEditor(param) {
                             children: "Long Bio"
                         }, void 0, false, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 99,
+                            lineNumber: 97,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1945,13 +1955,13 @@ function AboutEditor(param) {
                             children: aboutData.long_bio
                         }, void 0, false, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 100,
+                            lineNumber: 98,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                    lineNumber: 98,
+                    lineNumber: 96,
                     columnNumber: 21
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1964,7 +1974,7 @@ function AboutEditor(param) {
                                     children: "Education"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 108,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1977,18 +1987,18 @@ function AboutEditor(param) {
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 113,
+                                            lineNumber: 111,
                                             columnNumber: 37
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 109,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 109,
+                            lineNumber: 107,
                             columnNumber: 25
                         }, this),
                         aboutData.awards && aboutData.awards.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1998,7 +2008,7 @@ function AboutEditor(param) {
                                     children: "Awards"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 121,
+                                    lineNumber: 119,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2011,18 +2021,18 @@ function AboutEditor(param) {
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 124,
+                                            lineNumber: 122,
                                             columnNumber: 37
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 120,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 120,
+                            lineNumber: 118,
                             columnNumber: 25
                         }, this),
                         aboutData.exhibitions_events && aboutData.exhibitions_events.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2032,7 +2042,7 @@ function AboutEditor(param) {
                                     children: "Exhibitions & Events"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 130,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2045,18 +2055,18 @@ function AboutEditor(param) {
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 133,
                                             columnNumber: 37
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 133,
+                                    lineNumber: 131,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 131,
+                            lineNumber: 129,
                             columnNumber: 25
                         }, this),
                         aboutData.film_festival_screenings && aboutData.film_festival_screenings.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2066,7 +2076,7 @@ function AboutEditor(param) {
                                     children: "Film Festival Screenings"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 143,
+                                    lineNumber: 141,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2079,18 +2089,18 @@ function AboutEditor(param) {
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 146,
+                                            lineNumber: 144,
                                             columnNumber: 37
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 142,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 142,
+                            lineNumber: 140,
                             columnNumber: 25
                         }, this),
                         aboutData.residencies && aboutData.residencies.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2100,7 +2110,7 @@ function AboutEditor(param) {
                                     children: "Residencies"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 154,
+                                    lineNumber: 152,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2113,18 +2123,18 @@ function AboutEditor(param) {
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 157,
+                                            lineNumber: 155,
                                             columnNumber: 37
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 155,
+                                    lineNumber: 153,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 153,
+                            lineNumber: 151,
                             columnNumber: 25
                         }, this),
                         aboutData.press_online && aboutData.press_online.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2134,7 +2144,7 @@ function AboutEditor(param) {
                                     children: "Press & Online"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 165,
+                                    lineNumber: 163,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2147,45 +2157,45 @@ function AboutEditor(param) {
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                            lineNumber: 168,
+                                            lineNumber: 166,
                                             columnNumber: 37
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                    lineNumber: 166,
+                                    lineNumber: 164,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                            lineNumber: 164,
+                            lineNumber: 162,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                    lineNumber: 107,
+                    lineNumber: 105,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/admin/components/AboutEditor.tsx",
-            lineNumber: 50,
+            lineNumber: 48,
             columnNumber: 13
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "bg-white p-6 rounded-lg shadow-sm border",
+        className: "bg-white p-6 rounded-lg shadow-sm border text-black",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex justify-between items-center mb-6",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-xl font-semibold text-black",
+                        className: "text-xl font-semibold",
                         children: "Edit About Section"
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                        lineNumber: 181,
+                        lineNumber: 179,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2194,13 +2204,13 @@ function AboutEditor(param) {
                         children: "Cancel"
                     }, void 0, false, {
                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                        lineNumber: 182,
+                        lineNumber: 180,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                lineNumber: 180,
+                lineNumber: 178,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -2215,7 +2225,7 @@ function AboutEditor(param) {
                                 children: "Contact Information"
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 193,
+                                lineNumber: 191,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2232,7 +2242,7 @@ function AboutEditor(param) {
                                         placeholder: "your@email.com"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 194,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$FormComponents$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -2245,13 +2255,13 @@ function AboutEditor(param) {
                                         placeholder: "@yourusername"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 201,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 195,
+                                lineNumber: 193,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2268,7 +2278,7 @@ function AboutEditor(param) {
                                         placeholder: "https://vimeo.com/username"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 212,
+                                        lineNumber: 210,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$FormComponents$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TextArea"], {
@@ -2282,19 +2292,19 @@ function AboutEditor(param) {
                                         placeholder: "Phone, address, or other contact details"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 219,
+                                        lineNumber: 217,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 211,
+                                lineNumber: 209,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                        lineNumber: 192,
+                        lineNumber: 190,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2305,7 +2315,7 @@ function AboutEditor(param) {
                                 children: "Biography"
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 231,
+                                lineNumber: 229,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$FormComponents$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TextArea"], {
@@ -2319,7 +2329,7 @@ function AboutEditor(param) {
                                 placeholder: "Brief description for homepage and previews"
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 233,
+                                lineNumber: 231,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$FormComponents$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RichTextEditor"], {
@@ -2333,13 +2343,13 @@ function AboutEditor(param) {
                                 placeholder: "Detailed biography. Use **bold** and *italic* for formatting."
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 241,
+                                lineNumber: 239,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                        lineNumber: 230,
+                        lineNumber: 228,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2350,7 +2360,7 @@ function AboutEditor(param) {
                                 children: "Professional Information"
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 252,
+                                lineNumber: 250,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2363,7 +2373,7 @@ function AboutEditor(param) {
                                         placeholder: "2020 - MFA Photography, School Name 2018 - BA Art, University Name"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 255,
+                                        lineNumber: 253,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$FormComponents$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ArrayField"], {
@@ -2373,13 +2383,13 @@ function AboutEditor(param) {
                                         placeholder: "2023 - Photography Prize, Institution 2022 - Grant Award, Foundation"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 261,
+                                        lineNumber: 259,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 254,
+                                lineNumber: 252,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2392,7 +2402,7 @@ function AboutEditor(param) {
                                         placeholder: "2023 - Solo Show, Gallery Name, City 2022 - Group Exhibition, Museum, City"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 270,
+                                        lineNumber: 268,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$FormComponents$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ArrayField"], {
@@ -2402,13 +2412,13 @@ function AboutEditor(param) {
                                         placeholder: "2023 - Cannes Film Festival 2022 - Sundance Film Festival"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 276,
+                                        lineNumber: 274,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 269,
+                                lineNumber: 267,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2421,7 +2431,7 @@ function AboutEditor(param) {
                                         placeholder: "2023 - Artist Residency, Location 2022 - Summer Residency, Institution"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 285,
+                                        lineNumber: 283,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$FormComponents$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ArrayField"], {
@@ -2431,19 +2441,19 @@ function AboutEditor(param) {
                                         placeholder: "2023 - Featured in Magazine Name 2022 - Interview with Website"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                        lineNumber: 291,
+                                        lineNumber: 289,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 284,
+                                lineNumber: 282,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                        lineNumber: 251,
+                        lineNumber: 249,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2456,7 +2466,7 @@ function AboutEditor(param) {
                                 children: saving ? 'Saving Changes...' : 'Save About Information'
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 302,
+                                lineNumber: 300,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2466,25 +2476,25 @@ function AboutEditor(param) {
                                 children: "Cancel"
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                                lineNumber: 309,
+                                lineNumber: 307,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                        lineNumber: 301,
+                        lineNumber: 299,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/components/AboutEditor.tsx",
-                lineNumber: 190,
+                lineNumber: 188,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/components/AboutEditor.tsx",
-        lineNumber: 179,
+        lineNumber: 177,
         columnNumber: 9
     }, this);
 }
@@ -2505,7 +2515,6 @@ __turbopack_context__.s({
     "default": ()=>AdminPage
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-// app/admin/page.tsx
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/auth/dist/esm/index.esm.js [app-client] (ecmascript) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm$2f$index$2d$9ccb475d$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__p__as__getAuth$3e$__ = __turbopack_context__.i("[project]/node_modules/@firebase/auth/dist/esm/index-9ccb475d.js [app-client] (ecmascript) <export p as getAuth>");
@@ -2601,7 +2610,7 @@ function AdminPage() {
             onLogin: login
         }, void 0, false, {
             fileName: "[project]/app/admin/page.tsx",
-            lineNumber: 92,
+            lineNumber: 90,
             columnNumber: 16
         }, this);
     }
@@ -2613,12 +2622,12 @@ function AdminPage() {
                 children: "Loading..."
             }, void 0, false, {
                 fileName: "[project]/app/admin/page.tsx",
-                lineNumber: 98,
+                lineNumber: 96,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/admin/page.tsx",
-            lineNumber: 97,
+            lineNumber: 95,
             columnNumber: 13
         }, this);
     }
@@ -2633,12 +2642,12 @@ function AdminPage() {
                     children: "Logout"
                 }, void 0, false, {
                     fileName: "[project]/app/admin/page.tsx",
-                    lineNumber: 106,
+                    lineNumber: 104,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/admin/page.tsx",
-                lineNumber: 105,
+                lineNumber: 103,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$AdminHeader$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2648,7 +2657,7 @@ function AdminPage() {
                 onNewProject: ()=>openEditor()
             }, void 0, false, {
                 fileName: "[project]/app/admin/page.tsx",
-                lineNumber: 114,
+                lineNumber: 112,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2660,7 +2669,7 @@ function AdminPage() {
                         variant: "admin"
                     }, void 0, false, {
                         fileName: "[project]/app/admin/page.tsx",
-                        lineNumber: 123,
+                        lineNumber: 121,
                         columnNumber: 21
                     }, this),
                     activeTab === 'about' && aboutData && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$AboutEditor$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2668,17 +2677,16 @@ function AdminPage() {
                         isEditing: showAboutEditor,
                         onEdit: ()=>setShowAboutEditor(true),
                         onCancel: ()=>setShowAboutEditor(false),
-                        onSave: handleSaveAbout,
-                        uploadImage: uploadImage
+                        onSave: handleSaveAbout
                     }, void 0, false, {
                         fileName: "[project]/app/admin/page.tsx",
-                        lineNumber: 131,
+                        lineNumber: 129,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/page.tsx",
-                lineNumber: 121,
+                lineNumber: 119,
                 columnNumber: 13
             }, this),
             showModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$admin$2f$components$2f$ProjectModal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2689,13 +2697,13 @@ function AdminPage() {
                 uploadImage: uploadImage
             }, void 0, false, {
                 fileName: "[project]/app/admin/page.tsx",
-                lineNumber: 143,
+                lineNumber: 140,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/page.tsx",
-        lineNumber: 104,
+        lineNumber: 102,
         columnNumber: 9
     }, this);
 }

@@ -38,13 +38,13 @@ export default function ProjectModal({
     const [uploading, setUploading] = useState(false)
 
     const projectTypeOptions = [
-        'photography',
-        'performance',
-        'sculpture',
-        'drawing',
-        'publication',
-        'artistfilm',
-        'commercialfilm'
+        'Photography',
+        'Performance',
+        'Sculpture',
+        'Drawing',
+        'Publication',
+        'Artist Film',
+        'Commercial Film'
     ]
 
     const handleSubmit = async (e: React.FormEvent) => {

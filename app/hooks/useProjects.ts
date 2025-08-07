@@ -41,7 +41,7 @@ export function useProjects() {
     const saveProject = useCallback(async (project: Project) => {
         setError(null)
         try {
-            const { id, ...projectData } = project
+            const { id: _, ...projectData } = project
             if (project.id) {
                 await updateDoc(doc(db, 'projects', project.id), projectData)
             } else {

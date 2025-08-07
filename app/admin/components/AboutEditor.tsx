@@ -9,7 +9,6 @@ interface AboutEditorProps {
     onEdit: () => void
     onCancel: () => void
     onSave: (data: AboutData) => void
-    uploadImage: (file: File) => Promise<string>
 }
 
 export default function AboutEditor({
@@ -17,8 +16,7 @@ export default function AboutEditor({
     isEditing,
     onEdit,
     onCancel,
-    onSave,
-    uploadImage
+    onSave
 }: AboutEditorProps) {
     const [formData, setFormData] = useState<AboutData>(aboutData)
     const [saving, setSaving] = useState(false)
@@ -176,9 +174,9 @@ export default function AboutEditor({
     }
 
     return (
-        <div className="bg-white p-6 rounded-lg shadow-sm border">
+        <div className="bg-white p-6 rounded-lg shadow-sm border text-black">
             <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold text-black">Edit About Section</h2>
+                <h2 className="text-xl font-semibold">Edit About Section</h2>
                 <button
                     onClick={onCancel}
                     className="text-gray-600 hover:text-black"

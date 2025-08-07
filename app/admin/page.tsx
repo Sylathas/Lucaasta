@@ -1,7 +1,5 @@
 'use client'
 
-// app/admin/page.tsx
-
 import { useState, useEffect } from 'react'
 import { getAuth, onAuthStateChanged, User } from 'firebase/auth'
 import { app } from '@/lib/firebase/config'
@@ -19,7 +17,7 @@ import ProjectModal from './components/ProjectModal'
 import AboutEditor from './components/AboutEditor'
 
 // Types
-import { Project } from '@/types'
+import { Project, AboutData } from '@/types'
 
 const auth = getAuth(app)
 
@@ -73,7 +71,7 @@ export default function AdminPage() {
         closeModal()
     }
 
-    const handleSaveAbout = async (data: any) => {
+    const handleSaveAbout = async (data: AboutData) => {
         await saveAboutData(data)
         setShowAboutEditor(false)
     }
@@ -134,7 +132,6 @@ export default function AdminPage() {
                         onEdit={() => setShowAboutEditor(true)}
                         onCancel={() => setShowAboutEditor(false)}
                         onSave={handleSaveAbout}
-                        uploadImage={uploadImage}
                     />
                 )}
             </div>
